@@ -17,7 +17,7 @@ for name, value in inspect.getmembers(platform):
 import sys
 print(sys.platform, sys.version)
 
-print(f"is_xenial = {'stretch' in platform.dist()[1]}")
+print('is_xenial = {}'.format('stretch' in platform.dist()[1]))
 
 """
          architecture() = ('64bit', '')
