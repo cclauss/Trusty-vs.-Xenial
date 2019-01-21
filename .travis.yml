@@ -53,9 +53,9 @@ matrix:
       install: alias python3="/c/Python37/python"
     - name: "alias python3='/c/Python37/python.exe'"
       install: alias python3=/c/Python37/python.exe
-    - name: "alias python3='C:\Python37\python'"
+    - name: "alias python3='C:\Python37\\python'"
       install: alias python3="C:\Python37\python"
-    - name: "alias python3='C:\Python37\python.exe'"
+    - name: "alias python3='C:\Python37\\python.exe'"
       install: alias python3=C:\Python37\python.exe
     - name: "alias python3='/Python37/python'"
       install: alias python3="/Python37/python"
