@@ -1,0 +1,49 @@
+group: travis_latest
+language: sh  # python
+os: windows
+before_install:
+  - pwd
+  - choco install python
+  - ls -r /c/Python37
+  - ls -r /c/Python37/Tools
+  - ls -r /c/Python37/Scripts
+
+# The first two works and the rest do NOT!
+matrix:
+  include:
+    - name: "py"
+      install: true
+      script: py -c "import sys ; print(sys.version_info)"
+    - name: "python"
+      install: true
+      script: python -c "import sys ; print(sys.version_info)"
+    - name: "alias python3=py"
+      install: alias python3="py"
+    - name: "alias python3=python"
+      install: alias python3="python"
+    - name: "ln -s /c/Python37/python.exe /c/Python37/python3.exe "
+      install: ln -s /c/Python37/python.exe /c/Python37/python3.exe 
+    - name: "export PATH='/c/Python37' --> py" 
+      install:
+        - export PATH="/c/Python37:/c/Python37/Scripts:$PATH"
+        - echo $PATH
+      script: py -c "import sys ; print(sys.version_info)"
+    - name: "export PATH='/c/Python37' --> python" 
+      install:
+        - export PATH="/c/Python37:/c/Python37/Scripts:$PATH"
+        - echo $PATH
+      script: python -c "import sys ; print(sys.version_info)"
+    - name: "alias python3='/c/Python37/python'"
+      install: alias python3="/c/Python37/python"
+    - name: "alias python3='/c/Python37/python.exe'"
+      install: alias python3=/c/Python37/python.exe
+    - name: "alias python3='C:\\Python37\\python'"
+      install: alias python3="C:\\Python37\\python"
+    - name: "alias python3='C:\\Python37\\python.exe'"
+      install: alias python3=C:\\Python37\\python.exe
+    - name: "alias python3='/Python37/python'"
+      install: alias python3="/Python37/python"
+    - name: "alias python3='/Python37/python.exe'"
+      install: alias python3=/Python37/python.exe
+
+script: python3 -c "import sys ; print(sys.version_info)"
