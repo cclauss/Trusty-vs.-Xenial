@@ -23,7 +23,7 @@ matrix:
         - choco install python --version 3.6.8
         - ls -r /c/Python36
         #- alias python3='C:\Python36\python.exe'
-        - alias python3='/c/Python36/python.exe'
+        - alias python3='/c/Python36/python'
         - echo $PATH
         - export PATH="/c/Python36:/c/Python36/Scripts:$PATH"
         - echo $PATH
