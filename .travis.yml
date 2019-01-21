@@ -43,9 +43,11 @@ matrix:
       install: true
       script: python -c "import sys ; print(sys.version_info)"
     - name: "alias python3=py"
-      install: alias python3=py
+      install: alias python3="py"
     - name: "alias python3=python"
-      install: alias python3=python
+      install: alias python3="python"
+    - name: "ln -s /c/Python37/python.exe /c/Python37/python3.exe "
+      install: ln -s /c/Python37/python.exe /c/Python37/python3.exe 
     - name: "export PATH='/c/Python37' --> py" 
       install:
         - export PATH="/c/Python37:/c/Python37/Scripts:$PATH"
