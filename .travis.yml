@@ -21,6 +21,7 @@ matrix:
       before_install:
         - echo $PATH
         - choco install python --version 3.6.8
+        - alias python3='C:\Python36\python.exe'
         - echo $PATH
         - export PATH="/c/Python36:/c/Python36/Scripts:$PATH"
         - echo $PATH
