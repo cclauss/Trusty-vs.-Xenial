@@ -8,11 +8,14 @@ matrix:
     - name: "dist: xenial"
       dist: xenial
     - name: "os: osx"
-      python: true
       os: osx
+      python:
     - name: "os: windows"
       language: c  # 'python' is not yet supported
       os: windows
+      install: choco install python
+      script: py platform_info.py
+
 
 install: true
 script: python platform_info.py
