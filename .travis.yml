@@ -7,5 +7,10 @@ matrix:
       dist: trusty
     - name: "dist: xenial"
       dist: xenial
+    - name: "os: osx"
+      os: osx
+    - name: "os: windows"
+      os: windows
+
 install: true
 script: python platform_info.py
