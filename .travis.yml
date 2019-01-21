@@ -13,7 +13,7 @@ matrix:
       os: osx
       # before_install: brew upgrade python
     - name: "os: windows"
-      language: c  # 'language: python' is not yet supported
+      language: sh  # 'language: python' is not yet supported
       os: windows
       before_install:
         - choco install python --version 3.6.8
