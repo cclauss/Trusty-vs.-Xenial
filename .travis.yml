@@ -9,9 +9,10 @@ matrix:
       dist: xenial
       python: 3.6
     - name: "os: osx"
+      language: generic  # 'language: python' is not yet supported
       os: osx
     - name: "os: windows"
-      language: c  # 'language: python' is not yet supported
+      language: generic  # 'language: python' is not yet supported
       os: windows
 
 install: true
