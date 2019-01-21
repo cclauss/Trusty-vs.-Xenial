@@ -15,7 +15,9 @@ matrix:
     - name: "os: windows"
       language: c  # 'language: python' is not yet supported
       os: windows
-      before_install: choco install python
+      before_install:
+        - choco install python --version 3.6.8
+        - export PATH="/c/Python36:/c/Python36/Scripts:$PATH"
 
 install: chmod +x platform_info.py
 script: ./platform_info.py
