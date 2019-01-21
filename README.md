@@ -53,3 +53,27 @@ python_implementation() = CPython
 linux 3.6.7 (default, Nov 28 2018, 13:38:24) 
 [GCC 5.4.0 20160609]
 ```
+## dist: xenial, python: nightly
+```
+$ ./platform_info.py
+         architecture() = ('64bit', 'ELF')
+             libc_ver() = ('glibc', '2.23')
+              machine() = x86_64
+                 node() = travis-job-927a6330-1309-4395-a6c8-9db8c18f6a03
+             platform() = Linux-4.15.0-1026-gcp-x86_64-with-glibc2.2.5
+            processor() = x86_64
+        python_branch() = heads/master
+         python_build() = ('heads/master:e8239b8', 'Jan 21 2019 07:20:03')
+      python_compiler() = GCC 5.4.0 20160609
+python_implementation() = CPython
+      python_revision() = e8239b8
+       python_version() = 3.8.0a0
+ python_version_tuple() = ('3', '8', '0a0')
+              release() = 4.15.0-1026-gcp
+               system() = Linux
+                uname() = uname_result(system='Linux', node='travis-job-927a6330-1309-4395-a6c8-9db8c18f6a03', release='4.15.0-1026-gcp', version='#27~16.04.1-Ubuntu SMP Fri Dec 7 09:59:47 UTC 2018', machine='x86_64', processor='x86_64')
+              version() = #27~16.04.1-Ubuntu SMP Fri Dec 7 09:59:47 UTC 2018
+linux 3.8.0a0 (heads/master:e8239b8, Jan 21 2019, 07:20:03) 
+[GCC 5.4.0 20160609]
+is_xenial = True
+```
