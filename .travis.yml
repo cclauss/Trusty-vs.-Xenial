@@ -8,6 +8,9 @@ matrix:
     - name: "dist: xenial"
       dist: xenial
       python: 3.6
+    - name: "dist: xenial, python: nightly"
+      dist: xenial
+      python: nightly
     - name: "os: osx"
       language: generic  # 'language: python' is not yet supported
       os: osx
@@ -18,7 +21,6 @@ matrix:
       before_install:
         - choco install python --version 3.6.8
         - export PATH="/c/Python36:/c/Python36/Scripts:$PATH"
-      # script: py ./platform_info.py
 
 install: chmod +x platform_info.py
 script: ./platform_info.py
