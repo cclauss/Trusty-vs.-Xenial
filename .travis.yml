@@ -19,9 +19,12 @@ matrix:
       language: sh  # 'language: python' is not yet supported
       os: windows
       before_install:
+        - echo $PATH
         - choco install python --version 3.6.8
-        - refreshenv
+        - echo $PATH
         - export PATH="/c/Python36:/c/Python36/Scripts:$PATH"
+        - echo $PATH
+      # script: py ./platform_info.py
 
-install: true
-script: python3 ./platform_info.py
+install: chmod +x ./platform_info.py
+script: ./platform_info.py
