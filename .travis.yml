@@ -44,10 +44,8 @@ matrix:
       script: python -c "import sys ; print(sys.version_info)"
     - name: "alias python3=py"
       install: alias python3=py
-      script: py -c "import sys ; print(sys.version_info)"
     - name: "alias python3=python"
       install: alias python3=python
-      script: python -c "import sys ; print(sys.version_info)"
     - name: "export PATH='/c/Python37' --> py" 
       install:
         - export PATH="/c/Python37:/c/Python37/Scripts:$PATH"
