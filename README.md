@@ -1,5 +1,6 @@
 # Trusty-vs.-Xenial
-What is the best way to determine the current distro?
+Q: What is the best way to determine the current distro?
+A: import platform ; is_xenial = 'stretch' in platform.dist()[1]
 
 ## dist: trusty
 ```
