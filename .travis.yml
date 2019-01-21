@@ -1,21 +1,18 @@
 group: travis_latest
 language: python
-python: 3.6
 matrix:
   include:
     - name: "dist: trusty"
       dist: trusty
+      python: 3.6
     - name: "dist: xenial"
       dist: xenial
+      python: 3.6
     - name: "os: osx"
       os: osx
-      python:
     - name: "os: windows"
-      language: c  # 'python' is not yet supported
+      language: c  # 'language: python' is not yet supported
       os: windows
-      install: choco install python
-      script: py platform_info.py
-
 
 install: true
 script: python platform_info.py
