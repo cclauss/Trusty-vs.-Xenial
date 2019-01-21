@@ -1,7 +1,12 @@
 # Trusty-vs.-Xenial
-Q: What is the best way to determine the current distro?
-A: import platform ; is_xenial = 'stretch' in platform.dist()[1]
+__Q:__ What is the best way to determine the current distro?
 
+__A:__
+```python
+import platform
+uname_version = platform.uname().version
+IS_DIST_XENIAL = '-Ubuntu' in uname_version and '16.04' in uname_version
+```
 ## dist: trusty
 ```
 $ python platform_info.py
