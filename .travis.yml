@@ -39,6 +39,9 @@ matrix:
     - name: "py"
       install: true
       script: py -c "import sys ; print(sys.version_info)"
+    - name: "python"
+      install: true
+      script: python -c "import sys ; print(sys.version_info)"
     - name: "export PATH='/c/Python37' --> py" 
       install:
         - export PATH="/c/Python37:/c/Python37/Scripts:$PATH"
@@ -53,10 +56,10 @@ matrix:
       install: alias python3="/c/Python37/python"
     - name: "alias python3='/c/Python37/python.exe'"
       install: alias python3=/c/Python37/python.exe
-    - name: "alias python3='C:\Python37\\python'"
-      install: alias python3="C:\Python37\python"
-    - name: "alias python3='C:\Python37\\python.exe'"
-      install: alias python3=C:\Python37\python.exe
+    - name: "alias python3='C:\\Python37\\python'"
+      install: alias python3="C:\\Python37\\python"
+    - name: "alias python3='C:\\Python37\\python.exe'"
+      install: alias python3=C:\\Python37\\python.exe
     - name: "alias python3='/Python37/python'"
       install: alias python3="/Python37/python"
     - name: "alias python3='/Python37/python.exe'"
