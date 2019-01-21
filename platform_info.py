@@ -17,7 +17,9 @@ for name, value in inspect.getmembers(platform):
 import sys
 print(sys.platform, sys.version)
 
-print('is_xenial = {}'.format('stretch' in platform.platform()))
+uname_version = platform.uname().version
+IS_DIST_XENIAL = '-Ubuntu' in uname_version and '16.04' in uname_version
+print('is_xenial = {}'.format(IS_DIST_XENIAL))
 
 """
          architecture() = ('64bit', '')
