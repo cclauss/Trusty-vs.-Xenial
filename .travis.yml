@@ -8,8 +8,10 @@ matrix:
     - name: "dist: xenial"
       dist: xenial
     - name: "os: osx"
+      python: true
       os: osx
     - name: "os: windows"
+      language: c  # 'python' is not yet supported
       os: windows
 
 install: true
