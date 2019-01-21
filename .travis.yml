@@ -11,9 +11,11 @@ matrix:
     - name: "os: osx"
       language: generic  # 'language: python' is not yet supported
       os: osx
+      before_install: brew install python
     - name: "os: windows"
-      language: generic  # 'language: python' is not yet supported
+      language: c  # 'language: python' is not yet supported
       os: windows
+      before_install: choco install python
 
-install: true
-script: python platform_info.py
+install: chmod +x platform_info.py
+script: ./platform_info.py
