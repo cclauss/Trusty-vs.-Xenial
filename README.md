@@ -1,4 +1,4 @@
-# Trusty-vs.-Xenial
+# Trusty vs. Xenial
 __Q:__ What is the best way to determine the current distro?
 
 __A:__
