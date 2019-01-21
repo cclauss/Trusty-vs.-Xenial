@@ -1,74 +1,24 @@
 group: travis_latest
-language: sh  # python
-os: windows
-before_install:
-  - pwd
-  - choco install python
-  - ls -r /c/Python37
-  - ls -r /c/Python37/Tools
-  - ls -r /c/Python37/Scripts
-
+language: python
 matrix:
   include:
-    #- name: "dist: trusty"
-    #  dist: trusty
-    # python: 3.6
-    #- name: "dist: xenial"
-    #  dist: xenial
-    #  python: 3.6
-    #- name: "dist: xenial, python: nightly"
-    #  dist: xenial
-    #  python: nightly
-    #- name: "os: osx"
-    #  language: generic  # 'language: python' is not yet supported
-    #  os: osx
-    #  # before_install: brew upgrade python
-    #- name: "os: windows"
-    #  language: sh  # 'language: python' is not yet supported
-    #  os: windows
-    #  before_install:
-    #    - echo $PATH
-    #    - choco install python --version 3.6.8
-    #    - ls -r /c/Python36
-    #    #- alias python3='C:\Python36\python.exe'
-    #    - alias python3='/c/Python36/python'
-    #    - echo $PATH
-    #    - export PATH="/c/Python36:/c/Python36/Scripts:$PATH"
-    #    - echo $PATH
-    #  # script: py ./platform_info.py
-    - name: "py"
-      install: true
-      script: py -c "import sys ; print(sys.version_info)"
-    - name: "python"
-      install: true
-      script: python -c "import sys ; print(sys.version_info)"
-    - name: "alias python3=py"
-      install: alias python3="py"
-    - name: "alias python3=python"
-      install: alias python3="python"
-    - name: "ln -s /c/Python37/python.exe /c/Python37/python3.exe "
-      install: ln -s /c/Python37/python.exe /c/Python37/python3.exe 
-    - name: "export PATH='/c/Python37' --> py" 
-      install:
-        - export PATH="/c/Python37:/c/Python37/Scripts:$PATH"
-        - echo $PATH
-      script: py -c "import sys ; print(sys.version_info)"
-    - name: "export PATH='/c/Python37' --> python" 
-      install:
-        - export PATH="/c/Python37:/c/Python37/Scripts:$PATH"
-        - echo $PATH
-      script: python -c "import sys ; print(sys.version_info)"
-    - name: "alias python3='/c/Python37/python'"
-      install: alias python3="/c/Python37/python"
-    - name: "alias python3='/c/Python37/python.exe'"
-      install: alias python3=/c/Python37/python.exe
-    - name: "alias python3='C:\\Python37\\python'"
-      install: alias python3="C:\\Python37\\python"
-    - name: "alias python3='C:\\Python37\\python.exe'"
-      install: alias python3=C:\\Python37\\python.exe
-    - name: "alias python3='/Python37/python'"
-      install: alias python3="/Python37/python"
-    - name: "alias python3='/Python37/python.exe'"
-      install: alias python3=/Python37/python.exe
-
-script: python3 -c "import sys ; print(sys.version_info)"
+    - name: "dist: trusty"
+      dist: trusty
+      python: 3.6
+    - name: "dist: xenial"
+      dist: xenial
+      python: 3.6
+    - name: "dist: xenial, python: nightly"
+      dist: xenial
+      python: nightly
+    - name: "os: osx"
+      language: generic  # 'language: python' is not yet supported
+      os: osx
+      # before_install: brew upgrade python
+    - name: "os: windows"
+      language: sh  # 'language: python' is not yet supported
+      os: windows
+      install: choco install python --version 3.6.8
+      script: py ./platform_info.py
+install: chmod +x ./platform_info.py
+script: ./platform_info.py
