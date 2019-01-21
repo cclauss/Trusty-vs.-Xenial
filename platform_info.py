@@ -17,6 +17,8 @@ for name, value in inspect.getmembers(platform):
 import sys
 print(sys.platform, sys.version)
 
+print(f"is_xenial = {'stretch' in platform.dist()[1]}")
+
 """
          architecture() = ('64bit', '')
               mac_ver() = ('11.0.3', ('', '', ''), 'iPad5,4')
