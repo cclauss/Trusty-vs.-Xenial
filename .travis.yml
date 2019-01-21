@@ -3,9 +3,9 @@ language: python
 python: 3.6
 matrix:
   include:
-    - name: trusty
+    - name: "dist: trusty"
       dist: trusty
-    - name: xenial
+    - name: "dist: xenial"
       dist: xenial
 install: true
 script: python platform_info.py
