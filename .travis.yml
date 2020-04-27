@@ -11,12 +11,12 @@ matrix:
     - name: "dist: boinic"
       dist: boinic
       python: 3.8
-    - name: "dist: disco"
-      dist: disco
-      python: 3.8
-    - name: "dist: eoan"
-      dist: eoan
-      python: 3.8
+    #- name: "dist: disco"
+    #  dist: disco
+    #  python: 3.8
+    #- name: "dist: eoan"
+    #  dist: eoan
+    #  python: 3.8
     - name: "dist: focal"
       dist: focal
       python: 3.8
