@@ -4,10 +4,22 @@ matrix:
   include:
     - name: "dist: trusty"
       dist: trusty
-      python: 3.6
+      python: 3.8
     - name: "dist: xenial"
       dist: xenial
-      python: 3.6
+      python: 3.8
+    - name: "dist: boinic"
+      dist: boinic
+      python: 3.8
+    - name: "dist: disco"
+      dist: disco
+      python: 3.8
+    - name: "dist: eoan"
+      dist: eoan
+      python: 3.8
+    - name: "dist: focal"
+      dist: focal
+      python: 3.8
     - name: "dist: xenial, python: nightly"
       dist: xenial
       python: nightly
@@ -18,7 +30,7 @@ matrix:
     - name: "os: windows"
       language: sh  # 'language: python' is not yet supported
       os: windows
-      install: choco install python --version 3.6.8
+      install: choco install python  #  --version 3.6.8
       script: py ./platform_info.py
 install: chmod +x ./platform_info.py
 script: ./platform_info.py
